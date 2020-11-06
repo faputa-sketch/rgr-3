@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/rgr-3/static/css/main.af901459.chunk.css",
+    "main.js": "/rgr-3/static/js/main.c2c38353.chunk.js",
+    "main.js.map": "/rgr-3/static/js/main.c2c38353.chunk.js.map",
+    "runtime-main.js": "/rgr-3/static/js/runtime-main.af51637f.js",
+    "runtime-main.js.map": "/rgr-3/static/js/runtime-main.af51637f.js.map",
+    "static/css/2.610ef204.chunk.css": "/rgr-3/static/css/2.610ef204.chunk.css",
+    "static/js/2.87ab9827.chunk.js": "/rgr-3/static/js/2.87ab9827.chunk.js",
+    "static/js/2.87ab9827.chunk.js.map": "/rgr-3/static/js/2.87ab9827.chunk.js.map",
+    "index.html": "/rgr-3/index.html",
+    "precache-manifest.d7a371fc81a34bfb9cf043065354df07.js": "/rgr-3/precache-manifest.d7a371fc81a34bfb9cf043065354df07.js",
+    "service-worker.js": "/rgr-3/service-worker.js",
+    "static/css/2.610ef204.chunk.css.map": "/rgr-3/static/css/2.610ef204.chunk.css.map",
+    "static/css/main.af901459.chunk.css.map": "/rgr-3/static/css/main.af901459.chunk.css.map",
+    "static/js/2.87ab9827.chunk.js.LICENSE.txt": "/rgr-3/static/js/2.87ab9827.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/rgr-3/static/media/ARIALUNI.91f4475d.TTF"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af51637f.js",
+    "static/css/2.610ef204.chunk.css",
+    "static/js/2.87ab9827.chunk.js",
+    "static/css/main.af901459.chunk.css",
+    "static/js/main.c2c38353.chunk.js"
+  ]
+}
