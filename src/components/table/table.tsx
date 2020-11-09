@@ -1,12 +1,15 @@
 import React from 'react';
 import classes from './table.module.scss';
 
+export type TableCell = string | number | JSX.Element;
+export type TableArray = TableCell[][];
+
 type Props = {
-  tableArr: Array<Array<string | JSX.Element>>;
+  tableArr: TableArray;
   className?: string;
 };
 
-const createTableCells = (tableArr: Array<Array<string | JSX.Element>>) =>
+const createTableCells = (tableArr: TableArray) =>
   tableArr.map((rowArr, i) => {
     const trKey = i + 1;
 

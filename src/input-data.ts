@@ -1,4 +1,4 @@
-const InputData = {
+const rgr2 = {
   21: {
     1: {
       title: 'Бег 60 м',
@@ -47,6 +47,70 @@ const InputData = {
       criticalTStudent: 2.977,
     },
   },
+};
+
+type Rgr3VariantType = {
+  1: {
+    xIntervals: number[];
+    yIntervals: number[];
+    table: number[][];
+    title: string;
+    firstValue: string;
+    secondValue: string;
+  };
+  2: null;
+} | null;
+
+const rgr3: Rgr3VariantType[] = [
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  {
+    1: {
+      xIntervals: [0.3, 1.3, 2.3, 3.3, 4.3],
+      yIntervals: [12, 32, 52, 72, 92],
+      table: [
+        [1, 2, 0, 0, 3],
+        [0, 3, 1, 0, 4],
+        [0, 0, 4, 6, 10],
+        [0, 0, 0, 8, 8],
+        [1, 5, 5, 14, 25],
+      ],
+      title: `
+      Корреляционная таблица зависимости между числом эритроцитов (X в млн.) и
+      содержанием гемоглобина (Y в %) в крови
+      `,
+      firstValue: 'эритроцитов',
+      secondValue: 'гемоглобина в крови',
+    },
+    2: null,
+  },
+  null,
+  null,
+  null,
+  null,
+];
+
+const InputData = {
+  rgr2,
+  rgr3,
 };
 
 export default InputData;

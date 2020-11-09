@@ -77,6 +77,67 @@ const diLetter = (
     d<sub>i</sub>
   </span>
 );
+const bigAXLetter = (
+  <span>
+    A<sub>x</sub>
+  </span>
+);
+const bigAYLetter = (
+  <span>
+    A<sub>y</sub>
+  </span>
+);
+const hXLetter = (
+  <span>
+    h<sub>x</sub>
+  </span>
+);
+const hYLetter = (
+  <span>
+    h<sub>y</sub>
+  </span>
+);
+const nXLetter = (
+  <span>
+    n<sub>x</sub>
+  </span>
+);
+const nYLetter = (
+  <span>
+    n<sub>y</sub>
+  </span>
+);
+const getSymbolSub = (symbol: string | JSX.Element, sub: string | JSX.Element) => (
+  <span>
+    {symbol}
+    <sub>{sub}</sub>
+  </span>
+);
+
+const vILetter = getSymbolSub('v', 'i');
+const uILetter = getSymbolSub('u', 'i');
+const nVILetter = (
+  <span>
+    n<sub>{vILetter}</sub>
+  </span>
+);
+const nUILetter = (
+  <span>
+    n<sub>{uILetter}</sub>
+  </span>
+);
+const nUIVI = getSymbolSub(
+  'n',
+  <span>
+    {uILetter}
+    {vILetter}
+  </span>
+);
+const nUIVIMultipleUIMultipleVILetter = (
+  <span>
+    {nUIVI} * {uILetter} * {vILetter}
+  </span>
+);
 
 const Letters = {
   subI: subILetter,
@@ -157,6 +218,86 @@ const Letters = {
     </span>
   ),
   di: diLetter,
+  bigAX: bigAXLetter,
+  bigAY: bigAYLetter,
+  hX: hXLetter,
+  hY: hYLetter,
+  nX: nXLetter,
+  nY: nYLetter,
+  yI: getSymbolSub('y', 'i'),
+  uI: uILetter,
+  u1: getSymbolSub('u', '1'),
+  u2: getSymbolSub('u', '2'),
+  u3: getSymbolSub('u', '3'),
+  u4: getSymbolSub('u', '4'),
+  vI: vILetter,
+  v1: getSymbolSub('v', '1'),
+  v2: getSymbolSub('v', '2'),
+  v3: getSymbolSub('v', '3'),
+  v4: getSymbolSub('v', '4'),
+  skoU: (
+    <span>
+      {skoLetter}
+      <sub>u</sub>
+    </span>
+  ),
+  skoV: (
+    <span>
+      {skoLetter}
+      <sub>v</sub>
+    </span>
+  ),
+  specU: 'u\u0305',
+  specV: 'v\u0305',
+  specU2: (
+    <span>
+      {'u\u0305'}
+      <sup>2</sup>
+    </span>
+  ),
+  specV2: (
+    <span>
+      {'v\u0305'}
+      <sup>2</sup>
+    </span>
+  ),
+  nVI: nVILetter,
+  nUI: nUILetter,
+  nVIMultipleVI: (
+    <span>
+      {nVILetter} * {vILetter}
+    </span>
+  ),
+  nUIMultipleUI: (
+    <span>
+      {nUILetter} * {uILetter}
+    </span>
+  ),
+  vI2: (
+    <span>
+      {vILetter}
+      <sup>2</sup>
+    </span>
+  ),
+  uI2: (
+    <span>
+      {uILetter}
+      <sup>2</sup>
+    </span>
+  ),
+  nVIMultipleVI2: (
+    <span>
+      {nVILetter} * {vILetter}
+      <sup>2</sup>
+    </span>
+  ),
+  nUIMultipleUI2: (
+    <span>
+      {nUILetter} * {uILetter}
+      <sup>2</sup>
+    </span>
+  ),
+  nUIVIMultipleUIMultipleVI: nUIVIMultipleUIMultipleVILetter,
 };
 
 export default Letters;
