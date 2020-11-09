@@ -5,7 +5,15 @@ export const calcValues = (variantIndex: number) => {
   const input = InputData.rgr3[variantIndex];
 
   if (input !== null) {
-    const { xIntervals, yIntervals, table, title, firstValue, secondValue } = input[1];
+    const {
+      xIntervals,
+      yIntervals,
+      table,
+      title,
+      firstValue,
+      secondValue,
+      firstValueSize,
+    } = input[1];
 
     // hx, hy
     const hX = Math.abs(GlobalHelper.rounding(xIntervals[0] - xIntervals[1], 1));
@@ -192,6 +200,7 @@ export const calcValues = (variantIndex: number) => {
       direction,
       firstValue,
       secondValue,
+      firstValueSize,
     };
   }
 

@@ -7,6 +7,7 @@ import UIFormuleComplex from './u-i-formule-complex';
 import Formule from '../formule';
 import Fraction from '../fraction';
 import graphImg21 from '../../img/graph_21_rgr3.jpg';
+import graphImg22 from '../../img/graph_22_rgr3.jpg';
 
 type Props = {
   variantIndex: number;
@@ -27,6 +28,9 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
 
   if (variantIndex === 20) {
     graphPath = graphImg21;
+  }
+  if (variantIndex === 21) {
+    graphPath = graphImg22;
   }
 
   const {
@@ -65,6 +69,7 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
     direction,
     firstValue,
     secondValue,
+    firstValueSize,
   } = values;
 
   return (
@@ -386,7 +391,7 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
           {direction ? 'увеличивается' : 'уменьшается'} также содержание {secondValue} и наоборот.
           По уравнению регрессии Y от X можно прогнозировать содержание {secondValue} по числу{' '}
           {firstValue}. Коэффициент регрессии Y на X равен {regressionKYX}, то есть при увеличении
-          числа {firstValue} на 1 млн, содержание {secondValue}{' '}
+          числа {firstValue} на {firstValueSize}, содержание {secondValue}{' '}
           {direction ? 'увеличится' : 'уменьшится'} на {regressionKYX * 100}%.
         </p>
       </ol>

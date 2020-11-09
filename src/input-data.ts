@@ -57,6 +57,7 @@ type Rgr3VariantType = {
     title: string;
     firstValue: string;
     secondValue: string;
+    firstValueSize: string;
   };
   2: null;
 } | null;
@@ -99,10 +100,27 @@ const rgr3: Rgr3VariantType[] = [
       `,
       firstValue: 'эритроцитов',
       secondValue: 'гемоглобина в крови',
+      firstValueSize: '1 млн',
     },
     2: null,
   },
-  null,
+  {
+    1: {
+      xIntervals: [160, 170, 180, 190],
+      yIntervals: [60, 70, 80, 90],
+      table: [
+        [4, 5, 0, 9],
+        [0, 6, 5, 11],
+        [0, 1, 4, 5],
+        [4, 12, 9, 25],
+      ],
+      title: 'Корреляционная таблица зависимости между ростом мужчин (X, см) и весом (Y, кг)',
+      firstValue: 'роста',
+      secondValue: 'веса',
+      firstValueSize: '1 см',
+    },
+    2: null,
+  },
   null,
   null,
   null,
