@@ -15,6 +15,10 @@ export const calcValues = (variantIndex: number) => {
       firstValueSize,
     } = input[1];
 
+    // nValue
+    const nValue = table[table.length - 1][table.length - 1];
+    //
+
     // hx, hy
     const hX = Math.abs(GlobalHelper.rounding(xIntervals[0] - xIntervals[1], 1));
     const hY = Math.abs(GlobalHelper.rounding(yIntervals[0] - yIntervals[1], 1));
@@ -95,10 +99,10 @@ export const calcValues = (variantIndex: number) => {
     //
 
     // specU, specU2, specV, specV2
-    const specU = nUIMultipleUISum / 10;
-    const specU2 = nUIMultipleUI2Sum / 10;
-    const specV = nVIMultipleVISum / 10;
-    const specV2 = nVIMultipleVI2Sum / 10;
+    const specU = nUIMultipleUISum / nValue;
+    const specU2 = nUIMultipleUI2Sum / nValue;
+    const specV = nVIMultipleVISum / nValue;
+    const specV2 = nVIMultipleVI2Sum / nValue;
     //
 
     // skoU, skoV
@@ -106,8 +110,7 @@ export const calcValues = (variantIndex: number) => {
     const skoV = GlobalHelper.rounding(Math.sqrt(specV2 - specV * 2), 2);
     //
 
-    // rColleration, rCollerationNom, rCollerationDenom, nValue
-    const nValue = table[table.length - 1][table.length - 1];
+    // rColleration, rCollerationNom, rCollerationDenom
     const rCollerationNom = nUIVIMultipleUIMultipleVISum - nValue * specU * specV;
     const rCollerationDenom = GlobalHelper.rounding(nValue * skoU * skoV, 2);
     const rColleration = GlobalHelper.rounding(rCollerationNom / rCollerationDenom, 2);

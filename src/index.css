@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-width: 600px;
   font-family: 'Arial Unicode MS', Arial, Helvetica;
 }
 

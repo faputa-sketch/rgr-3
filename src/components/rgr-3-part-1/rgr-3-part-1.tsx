@@ -109,10 +109,10 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
                   {Letters.sum}({Letters.nUIMultipleUI})
                 </span>
               }
-              denom="10"
+              denom="n"
             />
             =
-            <Fraction nom={nUIMultipleUISum} denom="10" />={specU}
+            <Fraction nom={nUIMultipleUISum} denom={nValue} />={specU}
           </Formule>
           <Formule>
             {Letters.specU2}
@@ -123,10 +123,10 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
                   {Letters.sum}({Letters.nUIMultipleUI2})
                 </span>
               }
-              denom="10"
+              denom="n"
             />
             =
-            <Fraction nom={nUIMultipleUI2Sum} denom="10" />={specU2}
+            <Fraction nom={nUIMultipleUI2Sum} denom={nValue} />={specU2}
           </Formule>
           <Formule>
             {Letters.specV}
@@ -137,10 +137,10 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
                   {Letters.sum}({Letters.nVIMultipleVI})
                 </span>
               }
-              denom="10"
+              denom="n"
             />
             =
-            <Fraction nom={nVIMultipleVISum} denom="10" />={specV}
+            <Fraction nom={nVIMultipleVISum} denom={nValue} />={specV}
           </Formule>
           <Formule>
             {Letters.specV2}
@@ -151,10 +151,10 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
                   {Letters.sum}({Letters.nVIMultipleVI2})
                 </span>
               }
-              denom="10"
+              denom="n"
             />
             =
-            <Fraction nom={nVIMultipleVI2Sum} denom="10" />={specV2}
+            <Fraction nom={nVIMultipleVI2Sum} denom={nValue} />={specV2}
           </Formule>
           <Formule>
             {Letters.skoU}={Letters.sqrt}({Letters.specU2} - ({Letters.specU})<sup>2</sup>) =
@@ -347,34 +347,28 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
             - b
             <Fraction nom="y" denom="x" />*{'x\u0305'}={specY}-{regressionKYX}*{specX}={kAY}
           </Formule>
-          <div style={{ display: 'flex' }}>
-            <Formule>
-              x =
-              <span>
-                a<sub>x</sub>
-              </span>
-              + b
-              <Fraction nom="x" denom="y" />* y
-            </Formule>
-            <div style={{ width: 30 }} />
-            <Formule>
-              y =
-              <span>
-                a<sub>y</sub>
-              </span>
-              + b
-              <Fraction nom="y" denom="x" />* x
-            </Formule>
-          </div>
-          <div style={{ display: 'flex' }}>
-            <Formule>
-              x ={kAX}+{regressionKXY}* y<span>- уравнение регрессии X от Y</span>
-            </Formule>
-            <div style={{ width: 30 }} />
-            <Formule>
-              y ={kAY}+{regressionKYX}* x<span>- уравнение регрессии Y от X</span>
-            </Formule>
-          </div>
+          <Formule>
+            x =
+            <span>
+              a<sub>x</sub>
+            </span>
+            + b
+            <Fraction nom="x" denom="y" />* y
+          </Formule>
+          <Formule>
+            y =
+            <span>
+              a<sub>y</sub>
+            </span>
+            + b
+            <Fraction nom="y" denom="x" />* x
+          </Formule>
+          <Formule>
+            x ={kAX}+{regressionKXY}* y<span>- уравнение регрессии X от Y</span>
+          </Formule>
+          <Formule>
+            y ={kAY}+{regressionKYX}* x<span>- уравнение регрессии Y от X</span>
+          </Formule>
         </ol>
         <li>Построим корреляционное поле и линию регрессии y(x).</li>
         <p>
