@@ -77,21 +77,31 @@ export const calcValues = (variantIndex: number) => {
 
     // nVIMultipleVI2Arr, nUIMultipleUI2Arr, nVIMultipleVI2Sum, nUIMultipleUI2Sum
     const nVIMultipleVI2Arr = vI2Arr.map((vI2, i) => table[i][table[i].length - 1] * vI2);
-    const nUIMultipleUI2Arr = uI2Arr.map((uI2, i) => table[i][table[i].length - 1] * uI2);
+    const nUIMultipleUI2Arr = uI2Arr.map((uI2, i) => table[table[i].length - 1][i] * uI2);
 
     const nVIMultipleVI2Sum = nVIMultipleVI2Arr.reduce((acc, el) => acc + el, 0);
     const nUIMultipleUI2Sum = nUIMultipleUI2Arr.reduce((acc, el) => acc + el, 0);
     //
 
     // nUIVIMultipleUIMultipleVIArr, nUIVIMultipleUIMultipleVISum
-    const nUIVIArr = table.reduce((acc, row, i, arr) => {
-      if (i !== arr.length - 1) {
-        acc.push(row[i]);
+    const nUIVIMultipleUIMultipleVIArr = table.reduce((acc1, row, i, arr1) => {
+      if (i === arr1.length - 1) {
+        return acc1;
       }
 
-      return acc;
+      const nUIVIMultipleUIMultipleVI = row.reduce((acc2, cell, j, arr2) => {
+        if (j === arr2.length - 1) {
+          return acc2;
+        }
+
+        return acc2 + cell * uIArr[j] * vIArr[i];
+      }, 0);
+
+      acc1.push(nUIVIMultipleUIMultipleVI);
+
+      return acc1;
     }, []);
-    const nUIVIMultipleUIMultipleVIArr = nUIVIArr.map((el, i) => el * vIArr[i] * uIArr[i]);
+
     const nUIVIMultipleUIMultipleVISum = nUIVIMultipleUIMultipleVIArr.reduce(
       (acc, el) => acc + el,
       0
@@ -106,8 +116,8 @@ export const calcValues = (variantIndex: number) => {
     //
 
     // skoU, skoV
-    const skoU = GlobalHelper.rounding(Math.sqrt(specU2 - specU * 2), 2);
-    const skoV = GlobalHelper.rounding(Math.sqrt(specV2 - specV * 2), 2);
+    const skoU = GlobalHelper.rounding(Math.sqrt(specU2 - Math.pow(specU, 2)), 2);
+    const skoV = GlobalHelper.rounding(Math.sqrt(specV2 - Math.pow(specV, 2)), 2);
     //
 
     // rColleration, rCollerationNom, rCollerationDenom
@@ -119,6 +129,7 @@ export const calcValues = (variantIndex: number) => {
     // rCollerationMistake, rCollerationMistakeNom, rCollerationMistakeDenom
     const rCollerationMistakeNom = GlobalHelper.rounding(1 - Math.pow(rColleration, 2), 4);
     const rCollerationMistakeDenom = nValue - 2;
+
     const rCollerationMistake = GlobalHelper.rounding(
       Math.sqrt(rCollerationMistakeNom / rCollerationMistakeDenom),
       2
@@ -154,6 +165,10 @@ export const calcValues = (variantIndex: number) => {
     }
 
     const direction = rColleration > 0;
+    //
+
+    // regressionKYXPercent
+    const regressionKYXPercent = GlobalHelper.rounding(regressionKYX * 100, 2);
     //
 
     return {
@@ -204,6 +219,7 @@ export const calcValues = (variantIndex: number) => {
       firstValue,
       secondValue,
       firstValueSize,
+      regressionKYXPercent,
     };
   }
 

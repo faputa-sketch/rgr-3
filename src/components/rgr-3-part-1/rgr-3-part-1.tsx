@@ -61,6 +61,7 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
     rCollerationMistakeDenom,
     regressionKXY,
     regressionKYX,
+    regressionKYXPercent,
     specX,
     specY,
     kAX,
@@ -386,7 +387,7 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
           По уравнению регрессии Y от X можно прогнозировать содержание {secondValue} по числу{' '}
           {firstValue}. Коэффициент регрессии Y на X равен {regressionKYX}, то есть при увеличении
           числа {firstValue} на {firstValueSize}, содержание {secondValue}{' '}
-          {direction ? 'увеличится' : 'уменьшится'} на {regressionKYX * 100}%.
+          {direction ? 'увеличится' : 'уменьшится'} на {regressionKYXPercent}%.
         </p>
       </ol>
     </>
