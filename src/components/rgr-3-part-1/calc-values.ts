@@ -109,10 +109,18 @@ export const calcValues = (variantIndex: number) => {
     //
 
     // specU, specU2, specV, specV2
-    const specU = nUIMultipleUISum / nValue;
-    const specU2 = nUIMultipleUI2Sum / nValue;
-    const specV = nVIMultipleVISum / nValue;
-    const specV2 = nVIMultipleVI2Sum / nValue;
+    const specUSpecU2SpecVSpecV2Rounding = 2;
+
+    const specU = GlobalHelper.rounding(nUIMultipleUISum / nValue, specUSpecU2SpecVSpecV2Rounding);
+    const specU2 = GlobalHelper.rounding(
+      nUIMultipleUI2Sum / nValue,
+      specUSpecU2SpecVSpecV2Rounding
+    );
+    const specV = GlobalHelper.rounding(nVIMultipleVISum / nValue, specUSpecU2SpecVSpecV2Rounding);
+    const specV2 = GlobalHelper.rounding(
+      nVIMultipleVI2Sum / nValue,
+      specUSpecU2SpecVSpecV2Rounding
+    );
     //
 
     // skoU, skoV

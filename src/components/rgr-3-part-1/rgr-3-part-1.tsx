@@ -6,6 +6,7 @@ import Letters from '../../letters';
 import UIFormuleComplex from './u-i-formule-complex';
 import Formule from '../formule';
 import Fraction from '../fraction';
+import graphImg4 from '../../img/graph_4_rgr3.jpg';
 import graphImg21 from '../../img/graph_21_rgr3.jpg';
 import graphImg22 from '../../img/graph_22_rgr3.jpg';
 
@@ -26,6 +27,9 @@ const Rgr3Part1 = ({ variantIndex }: Props) => {
 
   let graphPath = '';
 
+  if (variantIndex === 3) {
+    graphPath = graphImg4;
+  }
   if (variantIndex === 20) {
     graphPath = graphImg21;
   }
